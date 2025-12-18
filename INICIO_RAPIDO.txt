@@ -1,0 +1,216 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║   🎯 SEGMENTACIÓN INTELIGENTE DE CLIENTES - RETAIL ONLINE               ║
+║                                                                          ║
+║   Proyecto: Bootcamp Data Science                                       ║
+║   Tecnología: Machine Learning Clásico + Streamlit                      ║
+║   Dataset: Online Retail (UCI ML Repository)                            ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📊 ESTRUCTURA DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ia try/
+│
+├── 📁 data/                          Carpeta de datos
+│   └── DESCARGAR_DATASET.md         Instrucciones dataset
+│
+├── 📁 notebooks/                     Análisis completo
+│   └── analisis_segmentacion.ipynb  Notebook (Pasos 1-7)
+│
+├── 📁 src/                           Código PMV
+│   └── app_dashboard.py             Dashboard Streamlit (Paso 8)
+│
+├── 📄 requirements.txt               Dependencias
+├── 📄 README.md                      Documentación principal
+├── 📄 GUIA_USO.md                    Guía detallada
+├── 📄 PROYECTO_COMPLETADO.md         Resumen implementación
+├── 🔧 setup.ps1                      Setup automático
+├── 🐍 generate_test_data.py          Generador datos prueba
+└── 📄 .gitignore                     Archivos ignorados
+
+
+🚀 INICIO RÁPIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣  CONFIGURACIÓN
+
+   # Windows PowerShell (automático)
+   .\setup.ps1
+
+   # O manual
+   python -m venv venv
+   venv\Scripts\activate
+   pip install -r requirements.txt
+
+
+2️⃣  DESCARGAR DATASET
+
+   Visita: https://archive.ics.uci.edu/ml/datasets/Online+Retail
+   Descarga: Online Retail.xlsx
+   Coloca en: data/Online Retail.xlsx
+
+
+3️⃣  EJECUTAR ANÁLISIS (Pasos 1-7)
+
+   jupyter notebook notebooks/analisis_segmentacion.ipynb
+   
+   (Ejecutar todas las celdas en orden)
+
+
+4️⃣  EJECUTAR DASHBOARD (Paso 8)
+
+   streamlit run src/app_dashboard.py
+   
+   (Se abre en http://localhost:8501)
+
+
+📋 LOS 8 PASOS IMPLEMENTADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ PASO 1: Comprensión del Problema
+   └─ Explicación conceptual (sin código)
+   └─ Qué es un cliente valioso
+   └─ Por qué segmentar
+
+✅ PASO 2: EDA Básico
+   └─ Estructura del dataset
+   └─ Valores faltantes
+   └─ Outliers y conclusiones
+
+✅ PASO 3: Limpieza y Agregación
+   └─ Eliminar nulos y cancelaciones
+   └─ Calcular valor monetario
+   └─ Agregar a nivel cliente
+
+✅ PASO 4: Modelo RFM
+   └─ Recency (días desde última compra)
+   └─ Frequency (número de compras)
+   └─ Monetary (gasto total)
+
+✅ PASO 5: Clustering K-Means
+   └─ Normalización
+   └─ Método del codo
+   └─ Aplicación K-Means
+
+✅ PASO 6: Interpretación de Segmentos
+   └─ Características de cada cluster
+   └─ Etiquetas descriptivas
+   └─ Contribución a ingresos
+
+✅ PASO 7: Árbol de Decisión Explicativo
+   └─ Reglas de decisión
+   └─ Interpretabilidad
+   └─ Importancia de variables
+
+✅ PASO 8: PMV con Streamlit
+   └─ Dashboard interactivo
+   └─ KPIs principales
+   └─ Visualizaciones
+   └─ Tabla resumen RFM
+
+
+📊 DASHBOARD - CARACTERÍSTICAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KPIs Principales:
+  ▪ Total de clientes
+  ▪ Número de segmentos
+  ▪ Ingreso total
+  ▪ Ingreso promedio por segmento
+
+Visualizaciones:
+  ▪ Distribución de clientes (barras + pastel)
+  ▪ Comparación de gasto por segmento
+  ▪ Clusters en espacio RFM (3 gráficos)
+  ▪ Tabla resumen RFM
+  ▪ Insights y recomendaciones
+
+
+🎯 SEGMENTOS TÍPICOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🏆 Champions
+   Mejores clientes, alta frecuencia y gasto reciente
+   Prioridad: CRÍTICA
+
+⭐ Loyal Customers
+   Base sólida, compran regularmente
+   Prioridad: ALTA
+
+📊 Occasional Buyers
+   Compran esporádicamente, potencial de crecimiento
+   Prioridad: MEDIA
+
+⚠️  At Risk
+   Inactivos, riesgo de abandono
+   Prioridad: URGENTE
+
+
+🛠️  TECNOLOGÍAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+▪ Python 3.8+
+▪ pandas, numpy
+▪ scikit-learn (K-Means, DecisionTree)
+▪ matplotlib, seaborn, plotly
+▪ Streamlit
+▪ Jupyter Notebook
+
+
+📚 DOCUMENTACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 README.md                 → Documentación principal
+📄 GUIA_USO.md               → Guía paso a paso
+📄 PROYECTO_COMPLETADO.md    → Resumen de implementación
+📄 data/DESCARGAR_DATASET.md → Cómo obtener el dataset
+
+
+💡 CONSEJOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+▪ Ejecuta primero el notebook completo
+▪ Guarda los archivos .pkl y .csv generados
+▪ Usa "datos pre-procesados" en el dashboard si ya tienes resultados
+▪ Para testing, genera datos sintéticos con generate_test_data.py
+
+
+❓ PROBLEMAS COMUNES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Q: No encuentro el dataset
+A: Descárgalo desde UCI (ver data/DESCARGAR_DATASET.md)
+
+Q: Error al importar módulos
+A: pip install -r requirements.txt
+
+Q: Dashboard no carga datos
+A: Ejecuta primero el notebook completo
+
+Q: Visualizaciones no aparecen
+A: pip install plotly --upgrade
+
+
+✨ CARACTERÍSTICAS DESTACADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Implementación completa de los 8 pasos
+✓ Código limpio y comentado
+✓ Dashboard interactivo para no técnicos
+✓ Interpretabilidad prioritaria
+✓ Enfoque de negocio
+✓ Documentación exhaustiva
+✓ Scripts de setup automático
+✓ Listo para producción
+
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║   🎉 PROYECTO COMPLETADO Y LISTO PARA USAR                              ║
+║                                                                          ║
+║   Para empezar: .\setup.ps1                                             ║
+║   Documentación: README.md y GUIA_USO.md                                ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
