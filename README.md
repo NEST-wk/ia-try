@@ -1,7 +1,7 @@
-# Segmentación Inteligente de Clientes en Retail Online
+# 📊 Segmentación Inteligente de Clientes en Retail Online
 
 ## Descripción del Proyecto
-Sistema de segmentación de clientes utilizando Machine Learning clásico sobre el dataset Online Retail (UCI). El proyecto incluye análisis RFM, clustering con K-Means y un dashboard interactivo orientado a usuarios no técnicos.
+Sistema de segmentación de clientes utilizando Machine Learning clásico sobre el dataset Online Retail (UCI). El proyecto incluye análisis RFM, clustering con K-Means, árbol de decisión explicativo y un dashboard interactivo con **chatbot IA integrado (Groq)** orientado a usuarios no técnicos.
 
 ## Dataset
 **Online Retail Dataset** - UCI Machine Learning Repository
@@ -57,6 +57,20 @@ streamlit run src/app_dashboard.py
 
 El dashboard se abrirá automáticamente en el navegador (http://localhost:8501)
 
+### 🤖 Configurar Chatbot IA (GRATIS)
+
+El dashboard incluye un **asistente inteligente con Groq** para responder preguntas sobre tus segmentos.
+
+**Configuración rápida (2 minutos):**
+
+1. Ve a [https://console.groq.com/keys](https://console.groq.com/keys)
+2. Crea una cuenta gratuita (sin tarjeta)
+3. Genera tu API key (empieza con `gsk_...`)
+4. Pégala en el sidebar del dashboard
+5. **¡Listo!** Pregunta lo que quieras
+
+📖 **Guía detallada:** Ver [GROQ_SETUP.md](GROQ_SETUP.md)
+
 ## Metodología
 
 ### PASO 1: Comprensión del Problema
@@ -83,12 +97,17 @@ Caracterización y nomenclatura de cada segmento.
 ### PASO 7: Árbol de Decisión Explicativo
 Modelo supervisado para explicar reglas de pertenencia a segmentos.
 
-### PASO 8: PMV - Dashboard
-Producto Mínimo Viable con:
-- KPIs principales
-- Distribución de clientes por segmento
-- Comparación de gasto
-- Tabla resumen RFM
+### PASO 8: PMV - Dashboard Interactivo
+Producto Mínimo Viable con **6 pestañas**:
+
+1. **📊 Overview**: KPIs, distribución, comparación de gasto
+2. **🔍 EDA**: Análisis exploratorio de datos
+3. **📈 RFM Analysis**: Distribuciones y correlaciones RFM
+4. **🎯 Clustering**: Método del codo y silhouette scores
+5. **👥 Segmentos**: Visualizaciones interactivas 3D
+6. **🌳 Árbol de Decisión**: Modelo explicativo con matriz de confusión
+
+**Bonus:** 🤖 **Chatbot IA integrado** (Groq) - Pregunta sobre tus segmentos en lenguaje natural
 
 ## Resultados Esperados
 - Segmentos de clientes identificados y caracterizados
@@ -96,11 +115,11 @@ Producto Mínimo Viable con:
 - Dashboard funcional para toma de decisiones
 
 ## Tecnologías
-- Python 3.8+
-- pandas, numpy
-- scikit-learn
-- matplotlib, seaborn, plotly
-- Streamlit
+- **Python 3.8+**
+- **Data Science**: pandas, numpy, scikit-learn
+- **Visualización**: matplotlib, seaborn, plotly
+- **Dashboard**: Streamlit
+- **IA/Chatbot**: Groq API (GRATIS) - Llama 3.3, Mixtral, Gemma
 
 ## Autor
 Data Science Bootcamp Project - Retail Customer Segmentation
